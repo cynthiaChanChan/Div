@@ -1,0 +1,29 @@
+<view class="wrapper">
+	<view class="allImgs">
+		<view class="titleWrapper" hidden="{{pics.length === 3}}">
+			<view class="addImg" bindtap="upLoadImg">
+				<image class="add" src="../../images/add.png" mode="widthFix"></image>
+				<view class="imgInfo">
+					<view class="h2">从手机选择图片，最多三张</view>
+					<view class="h3">尺寸建议为410px * 273px</view>
+				</view>
+		    </view>
+		</view>
+		<view class="pics">
+			<view class="picWrapper" wx:for="{{pics}}" wx:key="{{index}}">
+				<image class="pic" bindtap="preview" data-index="{{index}}" src="{{item}}" mode="widthFix"></image>
+				<image class="delete" bindtap="delete" data-index="{{index}}" src="../../images/error.png"></image>
+			</view>
+		</view>
+	</view>
+	<view class="footer">
+		<view class="button" bindtap="cancel">取消</view>
+		<view class="button" bindtap="conform">确认</view>
+	</view>
+</view>
+<view class="lightbox" bindtap="hideHint" hidden="{{isHintHidden}}">
+	<view class="fail">
+	  <image class="boy" src="../../images/sorry.png" mode="widthFix"></image> 
+	  <view class="text"><text>{{hintText}}</text></view>
+	</view>
+</view>

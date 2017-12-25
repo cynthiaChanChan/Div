@@ -1,0 +1,165 @@
+page {
+	width: 100%;
+	height: 100%;
+	background-color: #ffffff;
+}
+
+.wrapper {
+	position: relative;
+	height: 100%;
+}
+
+.gatherLocation {
+	padding-bottom: 130rpx;
+}
+
+.gatherLocation .banner {
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+	height: 450rpx;
+}
+
+.gatherLocation .title {
+	text-align: center;
+	font-size: 32rpx;
+	color: #67bcdb;
+	padding: 20rpx 0;
+	border-bottom: 2px solid #f0f0f0;
+}
+
+.gatherLocation .lists {
+	font-size: 30rpx;
+	color: #999;
+}
+
+.gatherLocation .lists .list {
+	background-color: #fff;
+	padding: 20rpx 0;
+	text-align: center;
+	display: inline-block;
+	width: 33.3%;
+}
+
+.gatherLocation .lists .list.active {
+	color: #67bcdb;
+	border-bottom: 2px solid #67bcdb;
+}
+
+.gatherLocation .lists .content{
+	font-size: 30rpx;
+	border-top: 4px solid #f0f0f0;
+	padding: 0 30rpx 30rpx 30rpx;
+	background-color: #fff;
+}
+
+.gatherLocation .lists .content.inputText {
+	color: #000;
+	padding-top: 30rpx;
+}
+
+.gatherLocation .lists .content .li {
+	position: relative;
+	padding: 30rpx 0;
+	border-bottom: 2px solid #f0f0f0;
+}
+
+.gatherLocation .lists .content .li .icon{
+	width: 50rpx;
+	vertical-align: middle;
+	display: inline-block;
+	margin-right: 30rpx;
+}
+
+.gatherLocation .lists .content .li .subtitle {
+	width: 85%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.gatherLocation .lists .content .li .subtitle .address {
+	width: 100%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.gatherLocation .lists .content .li .hostPhone {
+	color: #67bcdb;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.gatherLocation .lists .content.allImgs .pics {
+	margin-top: 30rpx;
+}
+
+.gatherLocation .lists .content.allImgs .pics .picWrapper {
+	position: relative;
+}
+
+.gatherLocation .lists .content.allImgs .pics .pic {
+	display: block;
+	margin: 20rpx auto;
+	width: 100%;
+}
+
+.gatherLocation .lists .content .nullHint {
+	text-align: center;
+	color: #ccc;
+}
+
+.footer.has .button {
+	 width: 30%;
+}
+
+.footer.has .button:nth-child(3) {
+	background-color: #67bcdb;
+}
+/*报名*/
+.acceptanceForm {
+	padding: 60rpx 0 30rpx;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: #f9f9f9;
+}
+
+.acceptanceForm .delete {
+	position: absolute;
+	right: 30rpx;
+	top: 30rpx;
+	width: 60rpx;
+	height: 60rpx;
+}
+
+.acceptanceForm input {
+	color: #67bcdb;
+	text-align: center;
+	font-size: 32rpx;
+	margin: 15rpx auto;
+    max-width: 70%;
+    border-bottom: 4rpx solid #67bcdb;
+}
+
+.acceptanceForm input:nth-of-type(2) {
+	margin: 30rpx auto;
+}
+
+.acceptanceForm .button {
+	margin: 0 auto;
+	border-radius: 8rpx;
+	text-align: center;
+	line-height: 1;
+	width: 33%;
+	padding: 20rpx 0;
+	font-size: 30rpx;
+	color: #67bcdb;
+	border: 1px solid #67bcdb;
+	background-color: rgba(255,255,255,.6);
+	box-shadow: 2px 2px 8px rgba(0,0,0, .2);
+}

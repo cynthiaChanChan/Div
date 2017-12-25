@@ -1,0 +1,247 @@
+page {
+	width: 100%;
+	background-color: #f9f9f9;
+}
+
+.gatherLocation {
+	padding-bottom: 150rpx;
+}
+
+.gatherLocation .banner {
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+	height: 450rpx;
+}
+
+.gatherLocation .list {
+	position: relative;
+	padding: 0 30rpx;
+	font-size: 30rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	border-bottom: 1px solid #f0f0f0;
+	overflow: hidden;
+}
+.gatherLocation .list input {
+	box-sizing: content-box;
+	color: #67bcdb;
+	text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 30rpx;
+	right: 30rpx;
+  -webkit-transform: translateY(-50%);
+}
+
+.gatherLocation .list input.host {
+	text-align: left;
+	color: #000;
+}
+
+.gatherLocation .list .subTitle {
+	float: left;
+	color: #999;
+}
+
+.gatherLocation .list .info {
+	position: relative;
+	text-align: right;
+	max-width: 70%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	float: right;
+}
+
+.gatherLocation .list .info .h5 {
+	display: inline-block;
+}
+
+.gatherLocation .list .info .addr {
+	display: inline-block;
+	width: 100%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.gatherLocation .list .info picker {
+	display: inline-block;
+}
+
+.gatherLocation .list .info picker:first-of-type {
+	margin-right: 20rpx;
+}
+
+.gatherLocation .list .info.location {
+	color: #000000;
+}
+
+.gatherLocation .list image{
+	width: 50rpx;
+	vertical-align: middle;
+	display: inline-block;
+	margin-left: 10rpx;
+}
+
+.gatherLocation .list .info .time {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.gatherLocation .list.noteWrapper {
+	border-bottom: none;
+}
+
+.gatherLocation .list .note {
+	float: right;
+	color: #999;
+}
+
+.gatherLocation .list .note .noteTitle {
+	display: inline-block;
+}
+
+.gatherLocation .list .info .number {
+	position: absolute;
+	top: 0;
+	right: 0;
+	line-height: 30rpx;
+	text-align: center;
+	color: #fff;
+	background-color: red;
+	border-radius: 50%;
+	width: 30rpx;
+	height: 30rpx;
+	font-size: 20rpx;
+}
+
+.gatherLocation .desc {
+	padding: 20rpx 30rpx;
+	font-size: 30rpx;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.last {
+	font-size: 30rpx;
+}
+
+.last .subTitle {
+	margin: 30rpx;
+	float: left;
+	display: inline-block;
+}
+
+.last .info {
+	margin: 15rpx 30rpx;
+	float: right;
+	display: inline-block;
+}
+
+.button {
+	width: 90%;
+	line-height: 1;
+	padding: 25rpx 0;
+	color: #fff;
+	margin: 30rpx auto;
+	background-color: rgb(103,188,219);
+	text-align: center;
+	font-size: 32rpx;
+	border-radius: 10rpx;
+	box-shadow: 2px 2px 8px rgba(0,0,0, .2);
+}
+
+/*选择图片*/
+
+.lightbox {
+	padding-top: 100rpx;
+}
+
+.allImgs {
+	position: relative;
+	height: 100%;
+	overflow: auto;
+	padding: 0 50rpx;
+	background-color: #f9f9f9;
+}
+
+.allImgs .titleWrapper {
+	background-color: #f9f9f9;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 35rpx;
+	color: #67bcdb;
+}
+
+.allImgs .titleWrapper .addImg {
+	font-size: 30rpx;
+	padding: 20rpx 0;
+	margin-top: 60rpx;
+	margin-bottom: 30rpx;
+	background-color: #f0f0f0;
+	color: #000000;
+}
+
+.allImgs .titleWrapper .addImg .add {
+	width: 60rpx;
+	margin-right: 20rpx;
+	display: inline-block;
+}
+
+.allImgs .titleWrapper .addImg .imgInfo {
+	display: inline-block;
+}
+
+.allImgs .titleWrapper .addImg .h3 {
+	color: #999;
+	font-size: 28rpx;
+}
+
+.allImgs .titleWrapper .close {
+	position: absolute;
+	right: 30rpx;
+	top: 0rpx;
+	width: 50rpx;
+}
+
+.bottomLine {
+	padding-bottom: 20rpx;
+	border-bottom: 1px solid #d1d1d1;
+	margin-bottom: 20rpx;
+}
+
+.typesWrapper {
+	margin-top: 200rpx;
+}
+
+.type {
+	margin-top: 20rpx;
+}
+
+.type .typeTitle {
+	float: left;
+	font-size: 30rpx;
+}
+
+.type .icon {
+	float: right;
+	width: 40rpx;
+}
+
+.type .imgs .img {
+	margin-bottom: 20rpx;
+	display: inline-block;
+	width: 33.3%;
+	height: 130rpx;
+}
+
+.type .imgs .img image {
+	margin: 0 auto;
+	display: block;
+	width: 90%;
+	height: 100%;
+}

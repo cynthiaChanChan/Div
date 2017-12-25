@@ -1,0 +1,23 @@
+<view class="listsWrapper">
+	<view class="wrapper" hidden="{{types[1].active.length == 0}}">
+		<view class="hint" hidden="{{isNullHidden}}">暂无公开的活动</view>
+		<view class="item" wx:for="{{items}}" wx:key="{{index}}">
+			<view class="moreInfo" bindtap="goUserList" data-userid="{{item.userid}}" wx:if="{{!user}}">
+				<image class="icon" src="../../images/host.png" mode="widthFix"></image>
+				<view class="itemTitle">{{item.dataObj.host}}</view>
+			</view>
+			<view class="clearfix" bindtap="goResult" data-id="{{item.id}}">
+				<image class="banner" src="{{item.dataObj.banner}}" mode="aspectFill"></image>
+				<view class="itemInfo">
+					<view class="itemTitle">{{item.dataObj.title}}</view>
+					<view class="itemTitle">{{item.dataObj.enDate}} {{item.dataObj.enTime}} 结束</view>
+					<view class="itemTitle">活动地点：{{item.dataObj.city || item.dataObj.address}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="footer">
+	<view class="button" bindtap="goTimeline">我的活动</view>
+	<view class="button" bindtap="add">创建活动</view>
+</view>

@@ -1,0 +1,134 @@
+.listsWrapper {
+	padding-bottom: 140rpx;
+}
+
+.wrapper {
+	background-color: #ffffff;
+	padding: 0 30rpx;
+}
+
+.wrapper .item {
+	font-size: 30rpx;
+	color: #000;
+	border-bottom: 10rpx solid #f0f0f0;
+	padding-bottom: 15rpx;
+}
+
+.wrapper .item .banner {
+	padding-top: 15rpx;
+	float: left;
+	width: 45%;
+	height: 200rpx;
+}
+
+.wrapper .item .itemInfo {
+	padding-left: 30rpx;
+	float: right;
+	width: 55%;
+}
+
+.wrapper .item .itemInfo .itemTitle {
+	margin-top: 20rpx;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.wrapper .item .itemInfo .arrow {
+	width: 60rpx;
+}
+
+.wrapper .item .moreInfo {
+	margin-top: 15rpx;
+	color: #67bcdb;
+}
+
+.wrapper .item .moreInfo .itemTitle {
+	display: inline-block;
+}
+
+.wrapper .item .moreInfo .icon {
+	width: 50rpx;
+	vertical-align: middle;
+	display: inline-block;
+	margin-right: 20rpx;
+}
+
+.hint {
+	text-align: center;
+	font-size: 30rpx;
+	color: #999;
+	margin-top: 30rpx;
+}
+
+.footer .button.add {
+	width: 100%;
+}
+
+/*更多报名信息弹窗*/
+
+.container {
+    min-height: 100%;
+	padding: 30rpx 5%;
+	position: relative;
+	background-color: #f9f9f9;
+}
+
+.container .li {
+	margin-bottom: 30rpx;
+}
+
+.container .li .title {
+	font-size: 30rpx;
+	color: #666;
+	padding-left: 10rpx;
+	margin-bottom: 10rpx;
+}
+
+.container .li input {
+	font-size: 30rpx;
+	height: 70rpx;
+	padding-left: 10rpx;
+	background-color: #f0f0f0;
+}
+
+.container .li radio-group .radio {
+	padding: 10rpx;
+	background-color: #f0f0f0;
+	font-size: 30rpx;
+	display: block;
+	margin-bottom: 10rpx;
+}
+
+.container .li radio-group radio {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.container .li radio-group text {
+	vertical-align: middle;
+}
+
+.container .li checkbox-group .checkbox {
+	padding: 10rpx;
+	background-color: #f0f0f0;
+	font-size: 30rpx;
+	display: block;
+	margin-bottom: 10rpx;
+}
+
+.container .li checkbox-group checkbox {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.container .li checkbox-group text {
+	vertical-align: middle;
+}
+
+.container .close {
+	position: absolute;
+	right: 30rpx;
+	top: 0rpx;
+	width: 50rpx;
+}

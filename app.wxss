@@ -1,0 +1,87 @@
+/* app 颜色
+pink: #e51873
+blue: #67bcdb*/
+
+image {
+   width: 0;
+   height: 0;
+}
+
+view {
+	box-sizing: border-box;
+}
+
+.clearfix:after {
+    content: " ";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.lightbox{
+    overflow: hidden;
+	  z-index: 2;
+  	background: rgba(0,0,0,.5);
+  	position: fixed;
+  	top: 0px;
+  	left: 0px;
+  	width: 100%;
+  	height: 100%;
+}
+
+.footer {
+  padding: 25rpx 50rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 -1px 6px #dcdcdc;
+  color: #fff;
+}
+
+.footer .button {
+  width: 45%;
+  line-height: 1;
+  padding: 25rpx 0;
+  color: #fff;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 32rpx;
+  border-radius: 10rpx;
+  box-shadow: 2px 2px 8px rgba(0,0,0, .2);
+}
+
+.footer .button:first-child {
+  float: left;
+  background-color: rgba(103,188,219,.8);
+}
+
+.footer .button:nth-child(2) {
+  float: right;
+  background-color: #67bcdb;
+}
+
+/*失败提示*/
+
+.fail {
+   width: 90%;
+   margin: 20% auto 0 auto;
+   border-radius: 30rpx;
+   padding: 30rpx;
+   background-color: rgb(242,249,255);
+}
+
+.fail .boy {
+    display: block;
+    margin: 0 auto;
+    width: 20%;
+}
+
+.fail .text {
+    line-height: 1.5;
+    margin: 5px 0 8px;
+    text-align: center;
+    font-size: 29rpx;
+}

@@ -1,0 +1,36 @@
+<view class="wrapper">
+	<view class="container">
+		<view class="list">
+			<view class="title">姓名 *</view>
+			<input maxlength="15" type="text" bindinput="nameInput" value="{{nameInput}}"/>
+		</view>
+		<view class="list">
+			<view class="title">手机 *</view>
+			<input maxlength="11" type="digit" bindblur="phoneBlur" bindinput="phoneInput" value="{{phoneInput}}"/>
+		</view>
+		<view class="list" wx:for="{{customQuestions}}" wx:for-index="idx" wx:for-item="itemName" wx:key="{{idx}}">
+			<view class="title">{{itemName.questionTitle}}</view>
+			<input maxlength="20" type="text" data-idx="{{idx}}" bindblur="answerBlur" value="{{answerInput}}" bindinput="answerInput" wx:if="{{itemName.radios.length === 0 || !itemName.radios}}"/>
+			<radio-group class="radio-group" bindchange="radioChange" data-idx="{{idx}}" wx:if="{{itemName.type == 1}}">
+			  	<label class="radio" wx:for="{{itemName.radios}}" wx:key="{{index}}">
+			    	<radio value="{{index}}" color="#67bcdb" checked="{{item.checked}}"/>
+			    	<text>{{item.value}}</text>
+			  	</label>
+			</radio-group>
+			<checkbox-group bindchange="checkboxChange" data-idx="{{idx}}" wx:if="{{itemName.type == 2}}">
+				<label class="checkbox" wx:for="{{itemName.radios}}" wx:key="{{index}}">
+				    <checkbox value="{{index}}" color="#67bcdb" checked="{{item.checked}}"/>
+				    <text>{{item.value}}</text>
+				</label>
+			</checkbox-group>
+		</view>
+		<view class="clearfooter"></view>
+    </view>
+	<view class="button active" bindtap="save">确认报名</view>
+</view>
+<view class="lightbox" bindtap="hideHint" hidden="{{isHintHidden}}">
+	<view class="fail">
+	  <image class="boy" src="../../images/sorry.png" mode="widthFix"></image> 
+	  <view class="text"><text>{{hintText}}</text></view>
+	</view>
+</view>

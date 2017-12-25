@@ -1,0 +1,72 @@
+<view class="listsWrapper">
+	<view class="type {{item.active}}" bindtap="checkType" wx:for="{{types}}" wx:key="{{index}}" data-index="{{index}}">{{item.title}}</view>
+	<view class="wrapper" hidden="{{types[0].active.length == 0}}">
+		<view class="hint" hidden="{{isHintHidden}}">暂无发布的活动</view>
+		<view class="dayList" wx:for="{{listsArray}}" wx:key="id">
+			<view class="dateWrapper">
+				<view class="goResult" bindtap="goResult" data-id="{{item.id}}">
+					<view class="title">{{item.dataObj.title}}</view>
+					<view class="title" >{{item.dataObj.enDate}} {{item.dataObj.enTime}} 结束</view>
+					<image class="arrow left" src="../../images/right-arrow.png" mode="widthFix"></image>
+			    </view>
+				<image bindtap="getAcceptance" data-index="{{index}}" class="arrow" src="../../images/profile.png" mode="widthFix"></image>
+				<view class="number" bindtap="getAcceptance" data-index="{{index}}" wx:if="{{item.userList.length > 0}}">{{item.userList.length}}</view>
+	    	</view>
+	    	<view class="lists" hidden="{{item.isHidden}}">
+	    		<view class="list" wx:for="{{item.userList}}" wx:key="id" wx:for-index="idx" wx:for-item="itemName">
+				    <view class="listContainer">
+				       <image class="clock" src="../../images/profile_s.png" mode="widthFix"></image>
+				       <view class="sub_title">{{itemName.username}}</view>
+				       <view class="address firstAddress"><text>{{itemName.phone}}</text></view>
+				       <view class="more" bindtap="showEnrollData" data-idx="{{idx}}" data-index="{{index}}" wx:if="{{itemName.datajson.length > 0}}">更多报名信息</view>
+				    </view>
+				</view>
+				<view class="noHint" wx:if ="{{item.userList.length == 0}}">暂无报名人员</view>
+	    	</view>
+	    </view>
+	</view>
+	<view class="wrapper" hidden="{{types[1].active.length == 0}}">
+		<view class="hint" hidden="{{isNullHidden}}">暂无报名的活动</view>
+		<view class="item clearfix" wx:for="{{items}}" wx:key="{{index}}" bindtap="goResult" data-id="{{item.id}}">
+			<image class="banner" src="{{item.dataObj.banner}}" mode="aspectFill"></image>
+			<view class="itemInfo">
+				<view class="itemTitle">{{item.dataObj.title}}</view>
+				<view class="itemTitle">{{item.dataObj.enDate}} {{item.dataObj.enTime}} 结束</view>
+				<image class="arrow" src="../../images/right-arrow.png" mode="widthFix"></image>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="footer">
+	<view class="button" bindtap="goAll">参加活动</view>
+	<view class="button" bindtap="add">创建活动</view>
+</view>
+<view class="lightbox" hidden="{{isLightboxHidden}}">
+	<view class="container">
+		<image bindtap="closeImgs" class="close" src="../../images/error.png" mode="widthFix"></image>
+		<view class="li">
+			<view class="title">姓名 *</view>
+			<input disabled="true" value="{{customQuestions.username}}"/>
+		</view>
+		<view class="li">
+			<view class="title">手机 *</view>
+			<input disabled="true" value="{{customQuestions.phone}}"/>
+		</view>
+		<view class="li" wx:for="{{customQuestions.datajson}}" wx:for-index="idx" wx:for-item="itemName" wx:key="{{idx}}">
+			<view class="title">{{itemName.questionTitle}}</view>
+			<input disabled="true" wx:if="{{itemName.radios.length === 0 || !itemName.radios}}" value="{{itemName.answer}}"/>
+			<radio-group class="radio-group" wx:if="{{itemName.type == 1}}">
+			  	<label class="radio" wx:for="{{itemName.radios}}" wx:key="{{index}}">
+			    	<radio value="{{index}}" color="#67bcdb" disabled="true" checked="{{item.checked}}"/>
+			    	<text>{{item.value}}</text>
+			  	</label>
+			</radio-group>
+			<checkbox-group bindchange="checkboxChange" data-idx="{{idx}}" wx:if="{{itemName.type == 2}}">
+				<label class="checkbox" wx:for="{{itemName.radios}}" wx:key="{{index}}">
+				    <checkbox value="{{index}}" color="#67bcdb" disabled="true" checked="{{item.checked}}"/>
+				    <text>{{item.value}}</text>
+				</label>
+			</checkbox-group>
+		</view>
+    </view>
+</view>

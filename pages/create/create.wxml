@@ -1,0 +1,115 @@
+<view class="wrapper">
+	<view class="gatherLocation">
+		<image wx:if="{{banner.length > 0}}" class="banner" src="{{banner}}" mode="aspectFill"></image>
+		<view class="list">
+			<input maxlength="15" bindinput="titleInput" placeholder="填写活动名称(15字以内) *" placeholder-style="color: #67bcdb;" value="{{gatheringTitle}}"/>
+		</view>
+		<view class="list" bindtap="getImg">
+			<view class="subTitle">活动海报 *</view>
+			<view class="info">
+				<image src="../../images/picture.png" mode="widthFix"></image>
+			</view>
+		</view>
+		<view class="list" bindtap="chooseLocation">
+			<view class="subTitle">活动地点 *</view>
+			<view class="info location">
+				<view wx:if="{{locationInfo.address.length > 0}}" class="addr">{{locationInfo.address}}</view>
+				<image wx:if="{{locationInfo.address.length === 0}}" src="../../images/placeholder.png" mode="widthFix"></image>
+			</view>
+		</view>
+		<view class="list">
+			<view class="subTitle">开始时间 *</view>
+			<view class="info">
+				<picker bindchange="chooseBeDate" mode="date" value="{{beDate}}" start="{{beStart}}" end="{{beEnd}}">
+			       <view class="picker">{{beDate}}</view>
+			    </picker>
+			    <picker bindchange="chooseBeTime" mode="time" value="{{beTime}}" start="06:00" end="23:59">
+			       <view class="picker">{{beTime}}</view>
+			    </picker>
+			</view>
+		</view>
+		<view class="list">
+			<view class="subTitle">结束时间 *</view>
+			<view class="info">
+				<picker bindchange="chooseEnDate" mode="date" value="{{enDate}}" start="{{enStart}}" end="{{enEnd}}">
+			       <view class="picker">{{enDate}}</view>
+			    </picker>
+				<picker bindchange="chooseEnTime" mode="time" value="{{enTime}}" start="06:00" end="23:59">
+			       <view class="picker">{{enTime}}</view>
+			    </picker>
+		    </view>
+		</view>
+		<view class="list">
+			<input class="host" maxlength="15" bindinput="hostInput" placeholder="填写主办方(15字以内)*" placeholder-style="color: #999;" value="{{host}}"/>
+		</view>
+		<view class="list">
+			<input class="host" maxlength="15" bindinput="hostPhoneInput" type="number" placeholder="填写主办方手机号或电话" placeholder-style="color: #999;" value="{{hostPhone}}"/>
+		</view>
+	 	<view class="list" bindtap="goDetail">
+			<view class="subTitle">活动详情</view>
+			<view class="note">
+		       <view class="noteTitle">{{wordNum}}</view>
+		       <image src="../../images/detail.png" mode="widthFix"></image>
+		    </view>
+		</view>
+		<view class="list" bindtap="goImg">
+			<view class="subTitle">相关图片</view>
+			<view class="info">
+				<view class="h5">{{imgNumHint}}</view>
+				<image src="../../images/picture.png" mode="widthFix"></image>
+			</view>
+		</view>
+		<view class="list" bindtap="chooseWays">
+			<view class="subTitle">默认收集参与者姓名及手机号，可自定义其他</view>
+			<view class="info">
+				<image src="../../images/add.png" mode="widthFix"></image>
+				<text class="number" wx:if="{{qsLength > 0}}">{{qsLength}}</text>
+			</view>
+		</view>
+		<view class="last .clearfix">
+			<view class="subTitle">是否要分享到“活动库”（公开活动）</view>
+			<view class="info">
+				<switch bindchange="join" color="#67bcdb" checked="{{isPublic == 1 ? true : false}}"></switch>
+			</view>
+		</view>
+	</view>
+	<view class="footer">
+		<view class="button active" bindtap="goTimeline">我的活动</view>
+		<view class="button {{buttonActive}}" bindtap="save">发布活动</view>
+    </view>
+</view>
+<view class="lightbox" hidden="{{isLightboxHidden}}">
+	<view class="allImgs">
+		<view class="titleWrapper">
+			<view class="addImg" bindtap="upLoadImg">
+				<image class="add" src="../../images/add.png" mode="widthFix"></image>
+				<view class="imgInfo">
+					<view class="h2">从手机选择一张图片</view>
+					<view class="h3">图片尺寸建议为410px * 273px</view>
+				</view>
+		    </view>
+			<view class="title">或点击选择以下海报图片</view>
+			<image bindtap="closeImgs" class="close" src="../../images/error.png" mode="widthFix"></image>
+		</view>
+		<view class="typesWrapper">
+			<view class="type" wx:for="{{imgFolder}}" wx:key="{{index}}">
+				<view class="bottomLine clearfix" bindtap="toggleImgs" data-index="{{index}}">
+					<view class="typeTitle">{{item.title}}</view>
+					<image class="icon" src="../../images/{{item.icon}}.png" mode="widthFix"></image>
+				</view>
+			    <view class="imgs" hidden="{{item.hidden}}" >
+			    	<view class="img" wx:for="{{item.banners}}" wx:for-index="idx" wx:for-item="itemName" wx:key="{{idx}}" >
+			    		<image src="https://korjo.fans-me.com{{itemName}}" bindtap="chooseImg" data-index="{{index}}" data-idx="{{idx}}" mode="aspectfill"></image>
+			    	</view>
+			    </view>
+			</view>
+		</view>
+	</view>
+</view>
+<canvas style="width: {{windowWidth}}px; height: {{canvasHeight}}px; display: {{isCanvasShow}};" canvas-id="shareImg"></canvas>
+<view class="lightbox" bindtap="hideHint" hidden="{{isHintHidden}}">
+	<view class="fail">
+	  <image class="boy" src="../../images/sorry.png" mode="widthFix"></image>
+	  <view class="text"><text>{{hintText}}</text></view>
+	</view>
+</view>

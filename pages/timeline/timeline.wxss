@@ -1,0 +1,253 @@
+page {
+	background-color: #f9f9f9;
+}
+
+.listsWrapper {
+	padding-bottom: 140rpx;
+}
+
+.wrapper {
+	background-color: #ffffff;
+	padding: 0 30rpx;
+	margin-top: 10rpx;
+}
+
+.wrapper .item {
+	font-size: 30rpx;
+	color: #000;
+	border-bottom: 10rpx solid #f0f0f0;
+	padding: 15rpx 0;
+}
+
+.wrapper .item .banner {
+	float: left;
+	width: 45%;
+	height: 200rpx;
+}
+
+.wrapper .item .itemInfo {
+	padding-left: 30rpx;
+	float: right;
+	width: 55%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.wrapper .item .itemInfo .itemTitle {
+	margin-top: 20rpx;
+}
+
+.wrapper .item .itemInfo .arrow {
+	width: 60rpx;
+}
+
+.type {
+	font-size: 30rpx;
+	background-color: #fff;
+	padding: 30rpx;
+	text-align: center;
+	display: inline-block;
+	width: 50%;
+}
+
+.type.active {
+	color: #67bcdb;
+	border-bottom: 2px solid #67bcdb;
+}
+
+
+.dayList {
+    padding-bottom: 20rpx;
+	margin-top: 20rpx;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.dayList  .dateWrapper {
+	position: relative;
+}
+
+.dayList .dateWrapper .datePic {
+	margin-right: 20rpx;
+	width: 50rpx;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.goResult {
+	position: relative;
+	width: 80%;
+}
+
+.goResult .arrow.left {
+	right: 0;
+}
+
+.dayList .dateWrapper .title {
+	width: 100%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 31rpx;
+	color: #000000;
+}
+
+.dayList .dateWrapper .number {
+	position: absolute;
+	top: -10rpx;
+	right: 0;
+	line-height: 40rpx;
+	text-align: center;
+	color: #fff;
+	background-color: red;
+	border-radius: 50%;
+	width: 40rpx;
+	height: 40rpx;
+	font-size: 20rpx;
+} 
+
+.dayList .lists{
+	border-left: 1px solid #f0f0f0;
+	margin: 3px 20rpx;
+}
+
+.dayList .arrow {
+	position: absolute;
+	width: 50rpx;
+	top: 50%;
+	right: 30rpx;
+	-webkit-transform: translateY(-50%);
+	-transform: translateY(-50%);
+}
+
+.list {
+	font-size: 32rpx;
+    padding: 30rpx 0;
+	position: relative;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.dayList .list:last-of-type {
+	border-bottom: none;
+}
+
+.list .sub_title {
+	font-weight: bolder;
+	display: inline-block;
+	vertical-align: middle;
+	color: #67bcdb;
+	margin-right: 20rpx;
+}
+
+.list .firstAddress {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.list .clock {
+	margin-right: 10rpx;
+	margin-left: 10rpx;
+	width: 40rpx;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.list .more {
+	height: 50rpx;
+	display: inline-block;
+	padding: 0 15rpx;
+	border-radius: 5rpx;
+	float: right;
+	line-height: 50rpx;
+	font-size: 30rpx;
+	color: #fff;
+	background-color: #50ba70;
+}
+
+.noHint {
+	background-color: #fff;
+	text-align: center;
+	font-size: 30rpx;
+	color: #999;
+	margin-top: 30rpx;
+}
+
+.hint {
+	background-color: #f9f9f9;
+	text-align: center;
+	font-size: 30rpx;
+	color: #999;
+	margin-top: 30rpx;
+}
+
+.footer .button.add {
+	width: 100%;
+}
+
+/*更多报名信息弹窗*/
+
+.container {
+    min-height: 100%;
+	padding: 30rpx 5%;
+	position: relative;
+	background-color: #f9f9f9;
+}
+
+.container .li {
+	margin-bottom: 30rpx;
+}
+
+.container .li .title {
+	font-size: 30rpx;
+	color: #666;
+	padding-left: 10rpx;
+	margin-bottom: 10rpx;
+}
+
+.container .li input {
+	font-size: 30rpx;
+	height: 70rpx;
+	padding-left: 10rpx;
+	background-color: #f0f0f0;
+}
+
+.container .li radio-group .radio {
+	padding: 10rpx;
+	background-color: #f0f0f0;
+	font-size: 30rpx;
+	display: block;
+	margin-bottom: 10rpx;
+}
+
+.container .li radio-group radio {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.container .li radio-group text {
+	vertical-align: middle;
+}
+
+.container .li checkbox-group .checkbox {
+	padding: 10rpx;
+	background-color: #f0f0f0;
+	font-size: 30rpx;
+	display: block;
+	margin-bottom: 10rpx;
+}
+
+.container .li checkbox-group checkbox {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.container .li checkbox-group text {
+	vertical-align: middle;
+}
+
+.container .close {
+	position: absolute;
+	right: 30rpx;
+	top: 0rpx;
+	width: 50rpx;
+}

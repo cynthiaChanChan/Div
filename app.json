@@ -1,0 +1,19 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/create/create",
+    "pages/detail/detail",
+    "pages/ways/ways",
+    "pages/img/img",
+    "pages/result/result",
+    "pages/timeline/timeline",
+    "pages/enroll/enroll",
+    "pages/all/all"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#f9f9f9",
+    "navigationBarTitleText": "活动小报名",
+    "navigationBarTextStyle":"black"
+  }
+}

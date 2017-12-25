@@ -1,0 +1,18 @@
+<view class="main">
+	<image class="banner" src="../../images/invited.jpg" mode="widthFix"></image>		
+	<view class="circles clearfix zoomIn">
+		<view class="circle first">
+			<view class="title">功能</view>
+			<text>根据活动发生的地点\n时间、介绍等\n生成请柬、邀请函\n再转发邀请朋友参与</text>
+		</view>
+		<view class="circle second">
+			<view class="title">主题</view>
+			<text>活动通知、结婚请柬\n派对、展览会\n画展、演出\n聚会、商业邀请函</text>
+		</view>
+    </view>	
+</view>
+<view class="buttons clearfix">
+	<view class="button first flipInX" bindtap="goCreate">创建活动</view>
+	<view class="button second flipInXTwo" bindtap="goTimeline">我的活动</view>
+	<view class="button second flipInXTwo" bindtap="goAll">参加活动</view>
+</view>

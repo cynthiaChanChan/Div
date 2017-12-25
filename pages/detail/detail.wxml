@@ -1,0 +1,15 @@
+<view class="wrapper">
+	<view class="clearfix">
+		<view class="clear" bindtap="clear">清空</view>
+		<view class="wordNum">{{wordNum}}</view>
+	</view>
+	<textarea placeholder="填写活动详情" value="{{inputText}}" bindinput="inputText" bindblur="textBlur" maxlength="500">		
+	</textarea>
+	<view class="button active" bindtap="save">确认</view>
+</view>
+<view class="lightbox" bindtap="hideHint" hidden="{{isHintHidden}}">
+	<view class="fail">
+	  <image class="boy" src="../../images/sorry.png" mode="widthFix"></image> 
+	  <view class="text"><text>{{hintText}}</text></view>
+	</view>
+</view>

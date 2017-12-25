@@ -1,0 +1,70 @@
+<view class="wrapper">
+	<view class="gatherLocation">
+		<image class="banner" src="{{result.res.banner}}" mode="aspectFill"></image>
+		<view class="title">{{result.res.title}}</view>
+		<view class="lists">
+			<view class="list {{item.active}}" bindtap="checkList" wx:for="{{lists}}" wx:key="{{index}}" data-index="{{index}}">{{item.title}}</view>
+			<view class="content" hidden="{{lists[0].active.length === 0}}">
+				<view class="li">
+					<image class="icon" bindtap="goUserList" data-userid="{{result.userid}}" src="../../images/host.png" mode="widthFix"></image>
+					<view class="subtitle">
+						<view class="text" data-userid="{{result.userid}}" bindtap="goUserList">{{result.res.host}}</view>
+						<view wx:if="{{result.res.hostPhone.length > 0}}" class="hostPhone" bindtap="call">电话联系Ta</view>
+					</view>
+			    </view>
+				<view class="li" bindtap="openLocation">
+					<image class="icon" src="../../images/placeholder.png" mode="widthFix"></image>
+					<view class="subtitle">
+						<view class="text address">{{result.res.name}}</view>
+						<view class="text address">{{result.res.address}}</view>
+					</view>
+			    </view>
+			    <view class="li">
+					<image class="icon" src="../../images/clock_s.png" mode="widthFix"></image>
+					<view class="subtitle">
+						<view class="text">{{result.res.beDate}} {{result.res.beTime}} 至 {{result.res.enDate}} {{result.res.enTime}}</view>
+					</view>
+			    </view>
+			    <view class="li">
+					<image class="icon" src="../../images/profile_s.png" mode="widthFix"></image>
+					<view class="subtitle">
+						<view class="text">已报名人数：{{result.userList.length}}人</view>
+					</view>
+			    </view>
+			</view>
+			<view class="content inputText" hidden="{{lists[1].active.length === 0}}">
+				<text>{{result.res.detail.inputText}}</text>
+				<view class="nullHint" wx:if="{{!result.res.detail.inputText}}">无活动详情</view>
+			</view>
+			<view class="content allImgs" hidden="{{lists[2].active.length === 0}}">
+				<view class="pics">
+					<image class="pic" wx:for="{{result.res.pics}}" wx:key="{{index}}" src="{{item}}" mode="widthFix"></image>
+					<view class="nullHint" wx:if="{{result.res.pics.length === 0}}">无相关图片</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="footer {{hasEditBtn}}" wx:if="{{notShare}}">
+		<view class="button" bindtap="goTimeline">我的活动</view>
+		<button class="button" open-type="share">分享</button>
+		<view class="button" bindtap="goCreate" wx:if="{{sameUser}}">编辑活动</view>
+	</view>
+	<view class="footer" wx:if="{{!notShare}}">
+		<view class="button" bindtap="goAll">其它活动</view>
+		<view class="button" bindtap="create">我要报名</view>
+	</view>
+</view>
+<view class="lightbox" hidden="{{isFormHidden}}">
+	<view class="acceptanceForm">
+		<image class="delete" bindtap="hideForm" src="../../images/error.png"></image>
+		<input maxlength="15" bindinput="nameInput" placeholder="姓名name"/>
+		<input maxlength="11" type="digit" bindblur="phoneBlur" bindinput="phoneInput" placeholder="电话phone number"value="{{phoneInput}}"/>
+		<view class="button" disabled="{{isDisabled}}" bindtap="save">提交</view>
+	</view>
+</view>
+<view class="lightbox" bindtap="hideHint" hidden="{{isHintHidden}}">
+	<view class="fail">
+	  <image class="boy" src="../../images/sorry.png" mode="widthFix"></image>
+	  <view class="text"><text>{{hintText}}</text></view>
+	</view>
+</view>

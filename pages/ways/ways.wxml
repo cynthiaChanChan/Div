@@ -1,0 +1,54 @@
+<view class="wrapper">
+	<view class="custom">
+		<view class="subTitle">常用信息</view>
+		<view class="btns clearfix">
+			<view class="btn {{item.active}}" wx:for="{{btns}}" wx:key="{{index}}" bindtap="clickBtn" data-index="{{index}}">
+				<image src="../../images/{{item.icon}}.png" mode="widthFix"></image>
+				<text class="span">{{item.btn}}</text>
+			</view>
+		</view>
+	</view>
+	<view class="edit">
+		<view class="li" wx:for="{{defaultQuestions}}" wx:key="{{index}}">
+			<view class="titleWrapper">
+				<switch type="checkbox" bindchange="switchChange2" data-index="{{index}}" color="#67bcdb" checked="{{item.required}}"/>
+				<text>必填</text>
+				<view class="inputWrapper titleInput"><input class="input"  placeholder="{{item.placeholder}}" disabled="true" value=""/></view>
+			</view>
+		</view>
+	</view>
+	<view class="custom">
+		<view class="subTitle">自定义项</view>
+		<view class="btns clearfix">
+			<view class="btn {{item.active}}" wx:for="{{choices}}" wx:key="{{index}}" bindtap="clickChoice" data-index="{{index}}" data-type="{{item.type}}">
+				<image src="../../images/{{item.icon}}.png" mode="widthFix"></image>
+				<text class="span">{{item.btn}}</text>
+			</view>
+		</view>
+	</view>
+	<view class="edit">
+		<view class="li" wx:for="{{questions}}" wx:for-index="idx" wx:for-item="itemName" wx:key="{{idx}}">
+			<view class="titleWrapper">
+				<switch type="checkbox" bindchange="switchChange" data-idx="{{idx}}" color="#67bcdb" checked="{{itemName.required}}"/>
+				<text>必填</text>
+				<view class="inputWrapper titleInput"><input class="input" maxlength="15" data-idx="{{idx}}" bindinput="titleInput" placeholder="{{itemName.placeholder}}" value="{{itemName.questionTitle}}"/></view>
+		    </view>
+			<view class="radios clearfix" wx:for="{{itemName.radios}}" wx:key="{{index}}">
+				<image class="circle" src="../../images/{{itemName.icon}}.png" mode="widthFix"></image>
+				<view class="inputWrapper answerWrapper">
+					<input class="input answer" maxlength="15" bindinput="answerInput" data-idx="{{idx}}" data-index="{{index}}" placeholder="输入选项(15字以内)" value="{{item.value}}"/>
+				</view>
+				<image wx:if="{{itemName.radios.length >= 3}}" data-idx="{{idx}}" data-index="{{index}}" bindtap="deleteRadio" class="delete" src="../../images/error.png" mode="widthFix"></image>
+			</view>
+			<image class="add" wx:if="{{itemName.radios.length <= 4 && itemName.type != 3}}" data-idx="{{idx}}" bindtap="addRadio" src="../../images/add.png" mode="widthFix"></image>
+		</view>
+	</view>
+	<view class="tip"><text>*点击按钮可增加或删除报名问题。\n常用信息不能修改问题，可确认是否必填</text></view>
+	<view class="button active" bindtap="save">确认</view>
+</view>
+<view class="lightbox" bindtap="hideHint" hidden="{{isHintHidden}}">
+	<view class="fail">
+	  <image class="boy" src="../../images/sorry.png" mode="widthFix"></image>
+	  <view class="text"><text>{{hintText}}</text></view>
+	</view>
+</view>

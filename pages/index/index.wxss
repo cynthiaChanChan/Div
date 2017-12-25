@@ -1,0 +1,198 @@
+page {
+	height: 100%;
+	width: 100%;
+	background-color: #fff;
+}
+
+.main {
+	position: relative;
+}
+
+.main .banner {
+  width: 100%;
+}
+
+
+.main .circles {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.main .circle {
+	padding: 20rpx 0;
+	text-align: center;
+	width: 45%;
+	border-radius: 30rpx;
+	background-color: rgba(0,0,0,.05);
+}
+
+.main .circle.first {
+	float: left;
+}
+
+.main .circle.second {
+	float: right;
+}
+
+.main .circle .title {
+	text-align: center;
+	font-size: 35rpx;
+	color: rgb(208,20,18);
+}
+
+.main .circle text {
+	color: #555;
+	font-size: 30rpx;
+	line-height: 1.2;
+}
+
+.main .icon {
+	display: block;
+	margin: 50rpx auto 0 auto;
+	width: 160rpx;
+}
+
+.buttons {
+	margin: 30rpx auto 0 auto;
+	width: 90%;
+}
+
+.buttons .button {
+  box-shadow: 2px 2px 8px rgba(0,0,0, .2);
+	margin: 0 auto 30rpx auto;
+	border-radius: 10rpx;
+	text-align: center;
+	font-size: 32rpx;
+	color: #ffffff;
+	width: 100%;
+	line-height: 80rpx;
+	height: 80rpx;
+	border: 1px solid #67bcdb;
+  background-color: #67bcdb;
+}
+
+@-webkit-keyframes flipInX {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+            transform: perspective(400px);
+  }
+}
+
+@keyframes flipInX {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+            transform: perspective(400px);
+  }
+}
+
+.flipInX {
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipInX;
+          animation-name: flipInX;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.flipInXTwo {
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipInX;
+          animation-name: flipInX;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+.zoomIn {
+	-webkit-animation-name: zoomIn;
+	        animation-name: zoomIn;
+	-webkit-animation-duration: 1s;
+	        animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+}
+
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+            transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+            transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
