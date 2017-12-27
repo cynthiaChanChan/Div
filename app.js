@@ -10,7 +10,7 @@ App({
                     if (code) {
                         wx.request({
                             url: apiUrl,
-                            data: {id: 1, js_code: code},
+                            data: {id: 30, js_code: code},//30
                             dataType: "json",
                             header: {
                                'content-type': 'application/x-www-form-urlencoded'

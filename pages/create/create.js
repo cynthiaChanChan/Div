@@ -367,7 +367,7 @@ Page({
     },
     checkIsActive: function() {
         const banner = this.data.banner;
-        const address = this.data.locationInfo.address;
+        const address = this.data.locationInfo ? this.data.locationInfo.address : "";
         const title = this.data.gatheringTitle;
         const host = this.data.host;
         if (!banner || !address || !title || !host) {

@@ -13,7 +13,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#f9f9f9",
-    "navigationBarTitleText": "活动小报名",
+    "navigationBarTitleText": "活动小召集",
     "navigationBarTextStyle":"black"
   }
 }
